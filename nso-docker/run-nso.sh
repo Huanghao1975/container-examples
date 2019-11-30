@@ -17,7 +17,7 @@ if [ "$1" == '' ]; then
     cd /root/nso-project
     # This will kill then tail -f below, and then invoke ncs --stop
     trap 'kill ${!}; term_handler' SIGTERM
-
+    ncs-netsim start &
     ncs --foreground -v &
 
     # wait forever

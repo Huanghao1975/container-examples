@@ -1,10 +1,7 @@
 #!/bin/sh
 
-VER="4.5.2"
+VER="5.2.0.3"
 
-docker rmi containers.cisco.com/frjansso/nso-base:$VER
-docker rmi containers.cisco.com/frjansso/nso-base:latest
-docker build --build-arg NSOVER=$VER -t containers.cisco.com/frjansso/nso-base:latest .
-docker tag containers.cisco.com/frjansso/nso-base:latest containers.cisco.com/frjansso/nso-base:$VER
-docker push containers.cisco.com/frjansso/nso-base:$VER
-docker push containers.cisco.com/frjansso/nso-base:latest
+sudo docker rmi hhyq/nso-test:$VER
+sudo docker build --build-arg NSOVER=$VER -t hhyq/nso-test:$VER .
+sudo docker push hhyq/nso-test:$VER
