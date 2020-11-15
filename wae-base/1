@@ -1,0 +1,12 @@
+# NSO base image
+FROM centos:7
+
+ARG WAEVER
+
+# Install deps
+COPY sources.list /etc/apt/sources.list
+RUN yum update;
+# Install Required Software Packages
+RUN yum install jdk-11; 
+
+
